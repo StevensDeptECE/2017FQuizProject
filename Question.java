@@ -20,7 +20,7 @@ public class Question {
 	public void setProblemType(problemType t) {p = t;}
 	
 	public String getQuestion() {return question;}
-	public void setQuestion(String q) {;}
+	public void setQuestion(String q) {question = q;}
 	
 	public String getAnswer() {return answer;}
 	public void setAnswer(String a) {answer  = a;}
