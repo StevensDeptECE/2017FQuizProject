@@ -1,53 +1,38 @@
-package edu.stevens.ee552.quiz.GUI.Filling;
+ package edu.stevens.ee552.quiz;
 
 
-import java.awt.*; // Font, Color, ...
-import javax.swing.*; //JFrame JPanel
-import java.awt.event.*;
-import javax.swing.border.EmptyBorder;
+	public class fillBlank  extends Question{
 
-public class Fillblank extends JPanel {
-    private String ansHint;
-    private String ans;
-    private String ansName;
+		
+	    public static String typeOfQuestion ;
+	    private String question1;
+	    private String correctAnswer;
+	    
+	    public fillBlank(String question, String correctAnswer) {
+	    	 this.setProblemType(p.FILL_IN_BLANK);
+	         setQuestion(question);
+	         setAnswer(correctAnswer);
+	        // TODO Auto-generated constructor stub
+	    }
+        public String getLagalQuestion(){
+        	question1=getQuestion().replaceAll("^[a-zA-Z0-9]", "");
+        	return question1;
+        }
+	    public boolean isCorrectAnswer(String answer) {
+	        if (answer.equals(getLagalQuestion())) {
+	            return true;
+	        }
+	        return false;
+	    }
 
+	    public String getCorrectAnswer() {
+	        // TODO Auto-generated method stub
+	        return correctAnswer;
+	    }
+	    public int getGrade(){
+	    	if(isCorrectAnswer(getAnswer())) return 2;
+			return 0;
+	    	
+	    }
 
-    public Fillblank(String ans1, String ansHint1, String ansName1){
-        ans=ans1;
-        ansHint=ansHint1;
-        ansName=ansName1;
-
-        this.setBounds(100, 100, 250, 200);
-        JPanel contentPane=new JPanel();
-        contentPane.setBorder(new EmptyBorder(5,5,5,5));
-        contentPane.setLayout(new GridLayout(2,1,5,5));
-        JPanel pane1=new JPanel();
-        contentPane.add(pane1);
-        pane1.setLayout(new GridLayout(4,1,5,5));
-        JLabel label1=new JLabel(ansName);
-        JLabel labelans1=new JLabel(ansHint);
-        JTextField textField1=new JTextField();
-        textField1.setColumns(10);
-        pane1.add(label1);
-        pane1.add(textField1);
-        pane1.add(labelans1);
-
-        labelans1.setForeground(Color.RED);
-        labelans1.setVisible(false);
-        JButton nButton = new JButton("ok");
-        pane1.add(BorderLayout.NORTH, nButton);
-        nButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if(!textField1.getText().equals(ans))
-                    labelans1.setVisible(true);
-                else labelans1.setVisible(false);
-            }
-        });
-        add(contentPane);
-        this.setVisible(true);
-    }
-
-
-
-}
-
+	}
