@@ -4,53 +4,22 @@
 <script type="text/javascript" src="/jsquiz.js"></script>
 </head>
 <body>
-<div class="radios">
-1+1=？<br />
-<label><input name="Fruit0" type="radio" value="0" />1 </label>
-<label><input name="Fruit0" type="radio" value="5" />2 </label>
-<label><input name="Fruit0" type="radio" value="0" />3 </label>
-<label><input name="Fruit0" type="radio" value="0" />4 </label>
-<label><input name="Fruit0" type="radio" value="0" />5 </label>
-</div>
-<div class="radios">
-2*2=？<br />
-<label><input name="Fruit1" type="radio" value="0" />1 </label>
-<label><input name="Fruit1" type="radio" value="0" />2 </label>
-<label><input name="Fruit1" type="radio" value="0" />3 </label>
-<label><input name="Fruit1" type="radio" value="5" />4 </label>
-<label><input name="Fruit1" type="radio" value="0" />5 </label>
-</div>
-<div class="radios">
-5-2=？<br />
-<label><input name="Fruit2" type="radio" value="0" />1 </label>
-<label><input name="Fruit2" type="radio" value="0" />2 </label>
-<label><input name="Fruit2" type="radio" value="5" />3 </label>
-<label><input name="Fruit2" type="radio" value="0" />4 </label>
-<label><input name="Fruit2" type="radio" value="0" />5 </label>
-</div>
-<div class="radios">
-x=3？<br />
-<label><input name="Fruit3" type="checkbox" value="0" />1 </label>
-<label><input name="Fruit3" type="checkbox" value="0" />2 </label>
-<label><input name="Fruit3" type="checkbox" value="0" />3 </label>
-<label><input name="Fruit3" type="checkbox" value="5" />4 </label>
-<label><input name="Fruit3" type="checkbox" value="5" />5 </label>
-</div>
-<div class="radios">
-x=2？<br />
-<label><input name="Fruit4" type="checkbox" value="5" />1 </label>
-<label><input name="Fruit4" type="checkbox" value="5" />2 </label>
-<label><input name="Fruit4" type="checkbox" value="0" />3 </label>
-<label><input name="Fruit4" type="checkbox" value="0" />4 </label>
-<label><input name="Fruit4" type="checkbox" value="0" />5 </label>
-</div>
-<div class="radios">
-x is odd？<br />
-<label><input name="Fruit5" type="checkbox" value="5" />1 </label>
-<label><input name="Fruit5" type="checkbox" value="0" />2 </label>
-<label><input name="Fruit5" type="checkbox" value="5" />3 </label>
-<label><input name="Fruit5" type="checkbox" value="0" />4 </label>
-<label><input name="Fruit5" type="checkbox" value="5" />5 </label>
+<div class="radios" th:each="q,qStat : ${questions}">
+	<div th:text="${q.type}"></div>
+	<div th:text="${q.question}"></div>
+	<div th:text="${q.Point}"></div>
+	<div class="radios" th:each="a,aStat : ${q.correctAnswer}">
+		<label>
+			<input th:name="${q.id}" th:type="${q.type}" value="5" />
+			<div style="display:inline-block;" th:text="${a}"></div>
+		</label>
+	</div>
+	<div class="radios" th:each="a,aStat : ${q.wrongAnswer}">
+		<label>
+			<input th:name="${q.id}" th:type="${q.type}" value="0" />
+			<div style="display:inline-block;" th:text="${a}"></div>
+		</label>
+	</div>
 </div>
 <button onclick="copyText()">SUBMIT</button>
 <p>Click SUBMIT to get your score</p>
