@@ -2,8 +2,8 @@ package edu.stevens.ee552.quiz;
 
 import java.util.ArrayList;
 
-public class MatchingQuestion extends Question {
 
+public class MatchingQuestion extends Question {
 
     public MatchingQuestion() {
         super();
@@ -11,7 +11,17 @@ public class MatchingQuestion extends Question {
     }
 
     @Override
-    public int getGrade(ArrayList<>) {
+    public int getGrade(ArrayList<IntegerPair>) {
 
+    }
+
+    class IntegerPair {
+        int optionA;
+        int optionB;
+
+        public IntegerPair(int optionA, int optionB) {
+            this.optionA = optionA;
+            this.optionB = optionB;
+        }
     }
 }
