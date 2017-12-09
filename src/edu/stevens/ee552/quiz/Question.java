@@ -9,6 +9,7 @@ public class Question {
     private String wrongAnswer;
     private String[] answerList;
     private String[] wrongAnswerList;
+    private int grade;
 
     public Question() {}
 
@@ -44,7 +45,8 @@ public class Question {
     }
 
     //need override
-    public int getGrade() {return 0;}
+    public int getGrade() {return grade;}
+    public void setGrade(int g) {grade = g;}
 
 
 }
