@@ -10,6 +10,7 @@ public class Question {
 	private String[] questionList;
 	private String[] answerList;
 	private String[] wrongAnswerList;
+	private int numPoints;
 
 	public Question() {}
 	
@@ -28,4 +29,6 @@ public class Question {
 	public String getWrongAnswer() {return wrongAnswer;}
 	public void setWrongAnswer(String w) {wrongAnswer = w;}
 	
+	public int getNumPoints() {return numPoints;}
+	public void setNumPoints(int points) {numPoints = points;
 	}
