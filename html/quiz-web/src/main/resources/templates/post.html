@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <title th:text="${webtitle}"></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	    <link rel="stylesheet" href="/post.css" />
+        <script type="text/javascript" src="/post.js"></script>
+    </head>
+    <body>
+    	<div class='hidden_weixin'><img class="hidden_weixin" src="/icon_large.jpg"/></div>
+    	<div class='hidden_thymeleaf' id="thymeleaf_title" th:text="${title}"></div>
+    	<div class='hidden_thymeleaf' id="thymeleaf_content" th:text="${content}"></div>
+        <div class="title">
+            <div class="title_title"></div>
+            <img class="title_portrait" />
+            <div class="title_author"></div>
+            <div class="title_school"></div>
+            <div class="title_date"></div>
+        </div>
+        <div style="position: relative">
+	        <div class='content' th:style='${contentHeight}'></div>
+	        <div class='content_askfordownload'>
+        		<a th:href="@{'https://loollo.com/download/' + ${pid}}"><div class='page_down_download'>
+        			<img th:src="${downloadAppButtonImage}" />
+        		</div></a>
+	        </div>
+        </div>
+    </body>
+</html>
+
