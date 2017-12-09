@@ -1,72 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 <script>
-function copyText()
-{
-var radios = document.getElementsByClassName("radios");
-var scores = 0;
-for(var i=0;i<radios.length;i++){
-	var fruit = document.getElementsByName("Fruit" + (i));
-	for(var j=0;j<fruit.length;j++){
-		if(fruit[j].checked){
-			scores += fruit[j].value * 1;
+function copyText() {
+	var radios = document.getElementsByClassName("radios");
+	var scores = 0;
+	for(var i=0;i<radios.length;i++){
+		var Question = document.getElementsByName("Question" + (i));
+		for(var j=0;j<Question.length;j++){
+			if(Question[j].checked){
+				scores += Question[j].value * 1;
+			}
 		}
 	}
-}
-document.getElementById("score").value=scores;
+	if($("#textQuestion1").val() == "6") {
+		scores += 10;
+	}
+	document.getElementById("score").value=scores;
 }
 </script>
 </head>
 <body>
 <div class="radios">
-1+1=？<br />
-<label><input name="Fruit0" type="radio" value="0" />1 </label>
-<label><input name="Fruit0" type="radio" value="5" />2 </label>
-<label><input name="Fruit0" type="radio" value="0" />3 </label>
-<label><input name="Fruit0" type="radio" value="0" />4 </label>
-<label><input name="Fruit0" type="radio" value="0" />5 </label>
-</div>
+Q1. 1+1=？<br />
+<label><input name="Question0" type="radio" value="0" />1 </label>
+<label><input name="Question0" type="radio" value="5" />2 </label>
+<label><input name="Question0" type="radio" value="0" />3 </label>
+<label><input name="Question0" type="radio" value="0" />4 </label>
+<label><input name="Question0" type="radio" value="0" />5 </label>
+</div><br />
 <div class="radios">
-2*2=？<br />
-<label><input name="Fruit1" type="radio" value="0" />1 </label>
-<label><input name="Fruit1" type="radio" value="0" />2 </label>
-<label><input name="Fruit1" type="radio" value="0" />3 </label>
-<label><input name="Fruit1" type="radio" value="5" />4 </label>
-<label><input name="Fruit1" type="radio" value="0" />5 </label>
-</div>
+Q2. 2*2=？<br />
+<label><input name="Question1" type="radio" value="0" />1 </label>
+<label><input name="Question1" type="radio" value="0" />2 </label>
+<label><input name="Question1" type="radio" value="0" />3 </label>
+<label><input name="Question1" type="radio" value="5" />4 </label>
+<label><input name="Question1" type="radio" value="0" />5 </label>
+</div><br />
 <div class="radios">
-5-2=？<br />
-<label><input name="Fruit2" type="radio" value="0" />1 </label>
-<label><input name="Fruit2" type="radio" value="0" />2 </label>
-<label><input name="Fruit2" type="radio" value="5" />3 </label>
-<label><input name="Fruit2" type="radio" value="0" />4 </label>
-<label><input name="Fruit2" type="radio" value="0" />5 </label>
-</div>
+Q3. 5-2=？<br />
+<label><input name="Question2" type="radio" value="0" />1 </label>
+<label><input name="Question2" type="radio" value="0" />2 </label>
+<label><input name="Question2" type="radio" value="5" />3 </label>
+<label><input name="Question2" type="radio" value="0" />4 </label>
+<label><input name="Question2" type="radio" value="0" />5 </label>
+</div><br />
 <div class="radios">
-x>3？<br />
-<label><input name="Fruit3" type="checkbox" value="0" />1 </label>
-<label><input name="Fruit3" type="checkbox" value="0" />2 </label>
-<label><input name="Fruit3" type="checkbox" value="0" />3 </label>
-<label><input name="Fruit3" type="checkbox" value="5" />4 </label>
-<label><input name="Fruit3" type="checkbox" value="5" />5 </label>
-</div>
+Q4. x>3？<br />
+<label><input name="Question3" type="checkbox" value="0" />1 </label>
+<label><input name="Question3" type="checkbox" value="0" />2 </label>
+<label><input name="Question3" type="checkbox" value="0" />3 </label>
+<label><input name="Question3" type="checkbox" value="5" />4 </label>
+<label><input name="Question3" type="checkbox" value="5" />5 </label>
+</div><br />
 <div class="radios">
-x<=2？<br />
-<label><input name="Fruit4" type="checkbox" value="5" />1 </label>
-<label><input name="Fruit4" type="checkbox" value="5" />2 </label>
-<label><input name="Fruit4" type="checkbox" value="0" />3 </label>
-<label><input name="Fruit4" type="checkbox" value="0" />4 </label>
-<label><input name="Fruit4" type="checkbox" value="0" />5 </label>
-</div>
+Q5. x<=2？<br />
+<label><input name="Question4" type="checkbox" value="5" />1 </label>
+<label><input name="Question4" type="checkbox" value="5" />2 </label>
+<label><input name="Question4" type="checkbox" value="0" />3 </label>
+<label><input name="Question4" type="checkbox" value="0" />4 </label>
+<label><input name="Question4" type="checkbox" value="0" />5 </label>
+</div><br />
 <div class="radios">
-x is odd？<br />
-<label><input name="Fruit5" type="checkbox" value="5" />1 </label>
-<label><input name="Fruit5" type="checkbox" value="0" />2 </label>
-<label><input name="Fruit5" type="checkbox" value="5" />3 </label>
-<label><input name="Fruit5" type="checkbox" value="0" />4 </label>
-<label><input name="Fruit5" type="checkbox" value="5" />5 </label>
+Q6. x is odd？<br />
+<label><input name="Question5" type="checkbox" value="5" />1 </label>
+<label><input name="Question5" type="checkbox" value="0" />2 </label>
+<label><input name="Question5" type="checkbox" value="5" />3 </label>
+<label><input name="Question5" type="checkbox" value="0" />4 </label>
+<label><input name="Question5" type="checkbox" value="5" />5 </label>
+</div><br />
+<div class = "radios">
+Q7. 3!=？<br />
+<label><input id="textQuestion1" name="Question6" type="text" /> </label>
 </div>
+<br />
 <button onclick="copyText()">SUBMIT</button>
 <p>Click SUBMIT to get your score</p>
 Score: <input type="text" id="score"><br/><br/>
