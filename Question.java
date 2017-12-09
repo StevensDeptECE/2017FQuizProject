@@ -1,4 +1,4 @@
-
+package src.edu.stevens.ee552.quiz;
 public class Question {
 
 	private int numOptions;
@@ -7,6 +7,9 @@ public class Question {
 	private String question;
 	private String answer;
 	private String wrongAnswer;
+	private String[] questionList;
+	private String[] answerList;
+	private String[] wrongAnswerList;
 
 	public Question() {}
 	
